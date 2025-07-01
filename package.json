@@ -19,15 +19,16 @@
     "axios": "^1.10.0",
     "expo": "~53.0.13",
     "expo-status-bar": "~2.2.3",
+    "native-base": "^3.4.28",
     "nativewind": "^4.1.23",
     "react": "19.0.0",
     "react-native": "0.79.4",
     "react-native-css-interop": "^0.1.22",
     "react-native-gesture-handler": "~2.24.0",
     "react-native-reanimated": "~3.17.4",
-    "react-native-safe-area-context": "^5.5.0",
+    "react-native-safe-area-context": "5.4.0",
     "react-native-screens": "~4.11.1",
-    "react-native-svg": "^15.2.0",
+    "react-native-svg": "15.11.2",
     "tailwindcss": "^3.4.17"
   },
   "devDependencies": {

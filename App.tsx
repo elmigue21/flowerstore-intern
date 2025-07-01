@@ -5,15 +5,19 @@ import { StyleSheet, Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import AppNavigator from "./navigation/AppNavigator";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { NativeBaseProvider } from "native-base";
+
 
 const queryClient = new QueryClient();
 
 export default function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <NavigationContainer>
-        <AppNavigator />
-      </NavigationContainer>
+      <NativeBaseProvider>
+        <NavigationContainer>
+          <AppNavigator />
+        </NavigationContainer>
+      </NativeBaseProvider>
     </QueryClientProvider>
   );
 }

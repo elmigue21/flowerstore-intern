@@ -12,6 +12,7 @@ import axios from "axios";
 import { SafeAreaView } from "react-native";
 import { useCharactersInfiniteQuery } from "./hooks/useCharactersInfiniteQuery";
 import { useQueryClient } from "@tanstack/react-query";
+import { Avatar } from "native-base";
 
 export default function HomeScreen() {
 
@@ -68,14 +69,10 @@ const {
                 shadowRadius: 4,
               }}
             >
-              <Image
+              <Avatar
                 source={{ uri: item.image }}
-                style={{
-                  width: 60,
-                  height: 60,
-                  borderRadius: 8,
-                  marginRight: 12,
-                }}
+                rounded="2xl"
+                bg="transparent"
               />
               <View>
                 <Text>Name: {item.name}</Text>
