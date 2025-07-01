@@ -12,7 +12,7 @@ import axios from "axios";
 import { SafeAreaView } from "react-native";
 import { useCharactersInfiniteQuery } from "./hooks/useCharactersInfiniteQuery";
 import { useQueryClient } from "@tanstack/react-query";
-import { Avatar } from "native-base";
+import { Avatar ,Box, Input} from "native-base";
 
 export default function HomeScreen() {
 
@@ -38,7 +38,7 @@ const {
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <TextInput value={search} onChangeText={(text) => setSearch(text)} />
+      <Input value={search} onChangeText={(text) => setSearch(text)} />
       {isLoading ? (
         <View>
           <Text> FETCHING</Text>
@@ -54,7 +54,7 @@ const {
           data={characters}
           keyExtractor={(item) => item.id.toString()}
           renderItem={({ item }) => (
-            <View
+            <Box
               style={{
                 flexDirection: "row",
                 alignItems: "center",
@@ -78,7 +78,7 @@ const {
                 <Text>Name: {item.name}</Text>
                 <Text>Status: {item.status}</Text>
               </View>
-            </View>
+            </Box>
           )}
         />
       )}
