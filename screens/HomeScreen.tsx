@@ -13,16 +13,8 @@ import { SafeAreaView } from "react-native";
 import { useCharactersInfiniteQuery } from "./hooks/useCharactersInfiniteQuery";
 import { useQueryClient } from "@tanstack/react-query";
 
-type Character = {
-  id: number;
-  name: string;
-  status: string;
-  image:string;
-};
-
 export default function HomeScreen() {
-  // const [characters, setCharacters] = useState<Character[]>([]);
-  // const [page,setPage] = useState(1)
+
   const [search, setSearch] = useState("")
 //"https://rickandmortyapi.com/api/character/?name=ri";
 const queryClient = useQueryClient();
@@ -35,7 +27,7 @@ const queryClient = useQueryClient();
 const {
   data,
   isLoading,
-  isFetchingNextPage, // 👈 available here
+  isFetchingNextPage,
   fetchNextPage,
   hasNextPage,
 } = useCharactersInfiniteQuery(search);
