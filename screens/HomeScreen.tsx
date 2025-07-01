@@ -12,6 +12,7 @@ import axios from "axios";
 import { SafeAreaView } from "react-native";
 import { useCharactersInfiniteQuery } from "./hooks/useCharactersInfiniteQuery";
 import { useQueryClient } from "@tanstack/react-query";
+import {Searchbar} from 'react-native-paper'
 
 export default function HomeScreen() {
 
@@ -37,7 +38,12 @@ const {
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <TextInput value={search} onChangeText={(text) => setSearch(text)} />
+      {/* <TextInput value={search} onChangeText={(text) => setSearch(text)} /> */}
+      <Searchbar
+        placeholder="Search"
+        onChangeText={setSearch}
+        value={search}
+      />
       {isLoading ? (
         <View>
           <Text> FETCHING</Text>
